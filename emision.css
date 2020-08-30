@@ -1,0 +1,1110 @@
+.card_bio{
+	position: absolute;
+	top: 0px;
+	z-index: 9999;
+	margin: 20px;
+	background-color:rgba(0,0,0,0.3);
+	width: 20%;
+	left: 45px;
+	border-radius: 10px;
+}
+
+.model_details{
+	margin: 5px;
+	font-size: 12px;
+}
+
+.model_title{
+	text-align: center;
+	margin: 5px;
+}
+.foto-perfil {
+    text-align:center;
+
+}
+
+.model_schedule{
+	margin: 5px;
+	font-size: 12px;
+}
+
+.model_options{
+	position: absolute;
+	left: 0px;
+	top: 20%;
+	background-color:rgba(0,0,0,0.3);
+	font-size: 30px;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 10px;
+	width:40px;
+	height: auto;
+	text-align: center;
+}
+
+.model_options_2{
+	position: absolute;
+	left: 0px;
+	bottom: 150px;
+	background-color:rgba(0,0,0,0.3);
+	font-size: 30px;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 10px;
+	width:40px;
+	height: auto;
+	text-align: center;
+}
+
+.model_options_3{
+	position: absolute;
+	left: 0px;
+	bottom: 50px;
+	background-color:rgba(0,0,0,0.3);
+	font-size: 30px;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 10px;
+	width:50px;
+	height: auto;
+	text-align: center;
+}
+
+.icon_options{
+	padding: 5px 5px 5px 5px;
+	font-size: 20px;
+}
+
+a.options{
+	font-size: 24px;
+}
+
+#emision{
+	//width: 100%;
+	//height: 100%;
+	text-align:center;
+	background-color: coral;
+}
+#showvideo{
+	color: black;
+}
+.emoji-wysiwyg-editor {
+    overflow: auto;
+    outline: none;
+    font-size: 16px;
+    background-color:rgba(254, 249, 249, 0.1);
+    height: unset !important;
+    min-height: 33px;
+    max-height: 150px;
+    bottom: 20px;
+    position: absolute;
+    width: 80%;
+    right: 110px;
+}
+.randomperformer{
+        bottom: 6px;
+    }
+.button_bar_full {
+    left: unset !important;
+}
+.chat_full {
+    right: 0% !important;
+    width: 35% !important;
+}
+.chatred {
+    color: red;
+}
+.chatorange {
+    color: orange;
+}
+.chatpruple {
+    color: purple;
+}
+.chatgreen {
+    color: green;
+}
+.chatblue {
+    color: blue;
+}
+.chatgray {
+    color: gray;
+}
+@media only screen and (max-width: 1280px){
+	.card_bio{
+		position: absolute;
+		top: 0px;
+		z-index: 9999;
+		margin: 20px;
+		background-color:rgba(0,0,0,0.3);
+		width: 80%;
+		left: 45px;
+		border-radius: 10px;
+	}
+	.randomperformer{
+		display: none;
+	}
+	.icon_options{
+		padding: 5px 5px 5px 5px;
+		font-size: 20px;
+	}
+}
+.private_show_emision{
+    display: inline-block;
+    height: 34px;
+    margin: 0;
+    padding: 0 19px;
+    font: 700 14px/34px Arial;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.3);
+    color: #441f00 !important;
+    background: #fc0;
+    background: linear-gradient(180deg,#fc0,#f98706);
+    text-shadow: 0 1px hsla(0,0%,100%,.4);
+    width: 365px;
+}
+@media (min-width: 1300px){
+    .private_show_emision{
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 14px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #441f00 !important;
+        background: #fc0;
+        background: linear-gradient(180deg,#fc0,#f98706);
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+        width: 440px;
+    }
+    .chat_client{
+        position: absolute !important;
+        bottom: 30px !important;
+        width: 30%;
+        right:23.78% !important;
+    }
+    .model_options{
+        position: absolute;
+        left: 80px;
+        top: 20%;
+        background-color:rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width:40px;
+        height: auto;
+        text-align: center;
+    }
+
+    .model_options_2{
+        position: absolute;
+        left: 80px;
+        bottom: 150px;
+        background-color:rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width:40px;
+        height: auto;
+        text-align: center;
+    }
+    #emision {
+        text-align: center;
+        background-color:coral;
+        left: 7%;
+        position: absolute;
+        min-width: 400px;
+        width: 94%;
+        margin-top: -6px;
+    }
+    .full-screen {
+        left: unset !important;
+        position: absolute;
+        min-width: 400px;
+        width: 100% !important;
+        margin-top: unset !important;
+        height: 89vh;
+    }
+    .chatlist {
+        position: absolute !important;
+        bottom: 77px !important;
+        width: 30%;
+        right: 397px !important;
+    }
+    .performer-full img {
+        width: 90% !important;
+        height: 175.4px !important;
+    }
+    .performer-full {
+        padding-bottom: 3px;
+    }
+    .model_option_full{
+        left:unset !important ;
+    }
+    .startstreaming {
+        width: 70%;
+        float: left;
+    }
+    .tabspanel {
+        width: 30%;
+        float: right;
+
+    }
+    .menutabs {
+
+    }
+    .bodytabs {
+        background: white;
+        color: #000000;
+        text-align: left;
+        height: 590px;
+        padding: 10px 20px 10px 10px;
+    }
+    .bodychats {
+
+    }
+    .bodyusers {
+
+    }
+    .bodyprivatechat {
+
+    }
+    .imgoffline {
+        width:100%;
+        max-width:407px;
+    }
+    .modelemision {
+        float: left;
+        width: 70%;
+    }
+    .body-container {
+        padding: 0px 4px !important
+    }
+    .private_show_emision_model {
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 14px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #441f00 !important;
+        background: #fc0;
+        background: linear-gradient(180deg, #fc0, #f98706);
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+        width: 100%;
+    }
+    .inputchat {
+        width:30%;
+        float: left;
+    }
+    .emojis-wysiwyg {
+        width: 86% !important;
+        padding-right: 60px !important;
+        color: black !important;
+        height: 34px !important;
+    }
+    .send_model {
+        position: absolute;
+        top: 17px;
+        right: 0%;
+        transform: translate(0%,-50%);
+    }
+    .model_back {
+        font-size: 22px !important;
+        padding-left: 10px;
+        vertical-align: middle;
+        padding-right: 10px;
+        z-index: 9999;
+    }
+}
+
+
+.buy_token_emision{
+    display: inline-block;
+    height: 34px;
+    margin: 0;
+    padding: 0 19px;
+    font: 700 14px/34px Arial;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.3);
+    color: #441f00 !important;
+    background: #2a00ff;
+    background: linear-gradient(180deg,#2a00ff,#128cbc);
+    text-shadow: 0 1px hsla(0,0%,100%,.4);
+}
+
+.tip_me_emision{
+    display: inline-block;
+    height: 34px;
+    margin: 0;
+    padding: 0 19px;
+    font: 700 14px/34px Arial;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.3);
+    color: #441f00 !important;
+    background: #21ff00;
+    text-shadow: 0 1px hsla(0,0%,100%,.4);
+}
+.tip_emision{
+    display: inline-block;
+    height: 34px;
+    margin: 0;
+    padding: 0 19px;
+    font: 700 14px/34px Arial;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.3);
+    color: #ffffff !important;
+    background: #000;
+    text-shadow: 0 1px hsla(0,0%,100%,.4);
+    width: 60px;
+}
+
+.send_client{
+	position:absolute;
+	bottom: 20;
+	right:0;
+	}
+
+.chat_client{
+	position: absolute !important;
+	bottom: -5px;
+	width: 30%;
+	right:24%;
+}
+.chatlist {
+    position: absolute !important;
+    bottom: 40px;
+    width: 30%;
+    right: 362px;
+}
+@media only screen and (max-width: 1280px){
+	.chat_client{
+		position: absolute !important;
+		bottom: 0;
+		width: 100%;
+		left:0;
+	}
+
+	.card_options{
+		position: absolute;
+		bottom: 30px;
+		z-index: 9999;
+		margin: 20px;
+		background-color: rgba(0,0,0,0.3);
+		width: 50%;
+		left: 50px;
+		border-radius: 10px;
+		text-align: center;
+	}
+
+	.private_show_emision{
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 14px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #441f00 !important;
+        background: #fc0;
+        background: linear-gradient(180deg,#fc0,#f98706);
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+        width: 170;
+    }
+    .buy_token_emision{
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 14px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #441f00 !important;
+        background: #2a00ff;
+        background: linear-gradient(180deg,#2a00ff,#128cbc);
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+    }
+
+    .tip_me_emision{
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 14px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #441f00 !important;
+        background: #21ff00;
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+    }
+    .tip_emision{
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 14px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #ffffff !important;
+        background: #000;
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+    }
+    .rowchatmodel {
+        bottom: 20px;
+        position: absolute;
+        width: 100%;
+    }
+}
+.signup-button_mobile{
+    display: inline-block;
+    height: 34px;
+    margin: 0;
+    padding: 0 19px;
+    font: 700 14px/34px Arial;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.3);
+    color: #441f00 !important;
+    background: #fc0;
+    background: linear-gradient(180deg,#fc0,#f98706);
+    text-shadow: 0 1px hsla(0,0%,100%,.4);
+    width: 50%;
+}
+.performer{
+	padding-bottom: 2px;
+	position: relative;
+}
+@media (min-width: 300px) and (max-width: 325px){
+   .model_options{
+        position: absolute;
+        top: 2%;
+        right: 10px;
+        left:unset;
+        background-color:rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width:50px;
+        height: auto;
+        text-align: center;
+        float: right;
+    }
+    .model_options_2 {
+        position: absolute;
+        left: unset;
+        top: 350px;
+        background-color:
+        rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width: 50px;
+        height: 130px;
+        text-align: center;
+        right: 10px;
+    }
+    .card_bio{
+        position: absolute;
+        top: 0px;
+        z-index: 9999;
+        margin: 20px;
+        background-color:rgba(0,0,0,0.3);
+        width: 79%;
+        left: -21px;
+        border-radius: 10px;
+    }
+    .chatlist {
+      /* bottom: 40px; */
+      /* width: 30%; */
+      right: unset;
+      bottom: 52px;
+      width: 50%;
+      left: 10px;
+    }
+    .startstreaming {
+        width: 48%;
+        float: right;
+    }
+    .tabspanel {
+        width: 93%;
+        position: fixed;
+        top: 0px;
+    }
+    .menutabs {
+
+    }
+    .bodytabs {
+        color: #000000;
+        text-align: left;
+        height: 533px;
+        padding: 10px 20px 10px 25px;
+    }
+    .bodychats {
+
+    }
+    .bodyusers {
+
+    }
+    .bodyprivatechat {
+
+    }
+    .modelemision {
+        float: right;
+        width: 100%;
+    }
+    .imgoffline {
+        width:100%;
+        max-width:290px;
+    }
+    .offline {
+        top: 203px;
+    }
+    .private_show_emision_model {
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 13px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #441f00 !important;
+        background: #fc0;
+        background: linear-gradient(180deg, #fc0, #f98706);
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+        width: 100%;
+    }
+    .send_model {
+        position: absolute;
+        top: 17px;
+        left: 0%;
+        transform: translate(0%,-50%);
+        display: none;
+    }
+    .emojis-wysiwyg {
+        width: 50% !important;
+        height: 34px;
+    }
+    .model_back {
+        font-size: 15px !important;
+        padding-left: 5px;
+        vertical-align: middle;
+        padding-right: 5px;
+        z-index: 9999;
+    }
+    .bodycolorusers {
+        padding-left: 156px !important;
+    }
+    .nav li  a {
+        padding: 10px 4px !important;
+    }
+    .rowchatmodel {
+        bottom: -10px;
+        position: fixed;
+        width: 100%;
+    }
+}
+@media (min-width: 326px) and (max-width: 374px){
+   .model_options{
+        position: absolute;
+        top: 2%;
+        right: 10px;
+        left:unset;
+        background-color:rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width:50px;
+        height: auto;
+        text-align: center;
+        float: right;
+    }
+    .model_options_2 {
+        position: absolute;
+        left: unset;
+        top: 350px;
+        background-color:
+        rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width: 50px;
+        height: 130px;
+        text-align: center;
+        right: 10px;
+    }
+    .card_bio{
+        position: absolute;
+        top: 0px;
+        z-index: 9999;
+        margin: 20px;
+        background-color:rgba(0,0,0,0.3);
+        width: 79%;
+        left: -21px;
+        border-radius: 10px;
+    }
+    .chatlist {
+      /* bottom: 40px; */
+      /* width: 30%; */
+      right: unset;
+      bottom: 52px;
+      width: 50%;
+      left: 10px;
+    }
+    .startstreaming {
+        width: 48%;
+        float: right;
+    }
+    .tabspanel {
+        width: 93%;
+        position: fixed;
+        top: 0px;
+    }
+    .menutabs {
+
+    }
+    .bodytabs {
+        color: #000000;
+        text-align: left;
+        height: 533px;
+        padding: 10px 20px 10px 25px;
+    }
+    .bodychats {
+
+    }
+    .bodyusers {
+
+    }
+    .bodyprivatechat {
+
+    }
+    .modelemision {
+        float: right;
+        width: 100%;
+    }
+    .imgoffline {
+        width:100%;
+        max-width:290px;
+    }
+    .offline {
+        top: 203px;
+    }
+    .private_show_emision_model {
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 14px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #441f00 !important;
+        background: #fc0;
+        background: linear-gradient(180deg, #fc0, #f98706);
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+        width: 100%;
+    }
+    .send_model {
+        position: absolute;
+        top: 17px;
+        left: 0%;
+        transform: translate(0%,-50%);
+        display: none;
+    }
+    .emojis-wysiwyg {
+        width: 50% !important;
+        height: 34px;
+    }
+    .model_back {
+        font-size: 15px !important;
+        padding-left: 5px;
+        vertical-align: middle;
+        padding-right: 5px;
+        z-index: 9999;
+    }
+    .bodycolorusers {
+        padding-left: 156px !important;
+    }
+    .nav li  a {
+        padding: 10px 4px !important;
+    }
+    .rowchatmodel {
+        bottom: 2px;
+        position: fixed;
+        width: 100%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 450px){
+    .model_options{
+        position: absolute;
+        top: 2%;
+        right: 10px;
+        left:unset;
+        background-color:rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width:40px;
+        height: 164px;
+        text-align: center;
+        float: right;
+    }
+    .model_options_2 {
+        position: absolute;
+        left: unset;
+        top: 350px;
+        background-color:
+        rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width: 40px;
+        height: 105px;
+        text-align: center;
+        right: 10px;
+    }
+    .card_bio{
+        position: absolute;
+        top: 0px;
+        z-index: 9999;
+        margin: 20px;
+        background-color:rgba(0,0,0,0.3);
+        width: 79%;
+        left: -21px;
+        border-radius: 10px;
+    }
+    .icon_options {
+        padding: 5px 5px 5px 5px;
+        font-size: 20px;
+    }
+    .chatlist {
+      right: unset;
+      bottom: 52px;
+      width: 50%;
+      left: 10px;
+    }
+    .startstreaming {
+        width: 48%;
+        float: right;
+    }
+    .tabspanel {
+        width: 93%;
+        position: fixed;
+        top: 0px;
+    }
+    .menutabs {
+
+    }
+    .bodytabs {
+        color: #000000;
+        text-align: left;
+        height: 533px;
+        padding: 10px 20px 10px 25px;
+    }
+    .bodychats {
+
+    }
+    .bodyusers {
+
+    }
+    .bodyprivatechat {
+
+    }
+    .modelemision {
+        float: right;
+        width: 100%;
+    }
+    .imgoffline {
+        width:100%;
+        max-width:313px;
+    }
+    .offline {
+        top: 203px;
+    }
+    .private_show_emision_model {
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 14px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #441f00 !important;
+        background: #fc0;
+        background: linear-gradient(180deg, #fc0, #f98706);
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+        width: 100%;
+    }
+    .send_model {
+        position: absolute;
+        top: 17px;
+        left: 0%;
+        transform: translate(0%,-50%);
+        display: none;
+    }
+    .emojis-wysiwyg {
+        width: 50% !important;
+        height: 34px;
+    }
+    .model_back {
+        font-size: 15px !important;
+        padding-left: 5px;
+        vertical-align: middle;
+        padding-right: 5px;
+        z-index: 9999;
+    }
+    .bodycolorusers {
+        padding-left: 205px !important;
+    }
+    .rowchatmodel {
+        bottom: -3px;
+        position: fixed;
+        width: 100%;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 768px){
+    .model_options{
+        position: absolute;
+        top: 2%;
+        right: 10px;
+        left:unset;
+        background-color:rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width:50px;
+        height: auto;
+        text-align: center;
+        float: right;
+    }
+    .model_options_2 {
+        position: absolute;
+        left: unset;
+        top: 310px;
+        background-color: rgba(0,0,0,0.3);
+        font-size: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        width: 50px;
+        height: 130px;
+        text-align: center;
+        float: right;
+        right: 10px;
+    }
+    .card_bio{
+        position: absolute;
+        top: 0px;
+        z-index: 9999;
+        margin: 20px;
+        background-color:rgba(0,0,0,0.3);
+        width: 80%;
+        left: 31px;
+        border-radius: 10px;
+    }
+    .startstreaming {
+        width: 48%;
+        float: right;
+    }
+    .tabspanel {
+        width: 93%;
+        position: fixed;
+        top: 0px;
+    }
+    .menutabs {
+
+    }
+    .bodytabs {
+        color: #000000;
+        text-align: left;
+        height: 533px;
+        padding: 10px 20px 10px 25px;
+    }
+    .bodychats {
+
+    }
+    .bodyusers {
+
+    }
+    .bodyprivatechat {
+
+    }
+    .modelemision {
+        float: right;
+        width: 100%;
+    }
+    .imgoffline {
+        width:100%;
+        max-width:475px;
+    }
+    .offline {
+        top: 203px;
+    }
+    .private_show_emision_model {
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 0 19px;
+        font: 700 14px/34px Arial;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 0 rgba(0,0,0,.3);
+        color: #441f00 !important;
+        background: #fc0;
+        background: linear-gradient(180deg, #fc0, #f98706);
+        text-shadow: 0 1px hsla(0,0%,100%,.4);
+        width: 100%;
+    }
+    .send_model {
+        position: absolute;
+        top: 17px;
+        left: 0%;
+        transform: translate(0%,-50%);
+        display: none;
+    }
+    .emojis-wysiwyg {
+        width: 50% !important;
+        height: 34px;
+    }
+    .model_back {
+        font-size: 15px !important;
+        padding-left: 5px;
+        vertical-align: middle;
+        padding-right: 5px;
+        z-index: 9999;
+    }
+    .bodycolorusers {
+        padding-left: 298px !important;
+    }
+
+    .rowchatmodel {
+        bottom: -2px;
+        position: fixed;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1700px) {
+    .chatlist {
+        position: absolute !important;
+        bottom: 40px;
+        width: 30%;
+        right: 362px;
+    }
+    .chat_client{
+        position: absolute !important;
+        bottom: 0;
+        width: 30%;
+        right: 23%;
+    }
+    .startstreaming {
+
+    }
+    .tabspanel {
+
+    }
+    .menutabs {
+
+    }
+    .bodytabs {
+
+    }
+    .bodychats {
+
+    }
+    .bodyusers {
+
+    }
+    .bodyprivatechat {
+
+    }
+    .rowchatmodel {
+        bottom: -3px;
+        position: fixed;
+        width: 100%;
+    }
+}
+

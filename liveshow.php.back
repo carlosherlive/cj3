@@ -1,0 +1,544 @@
+<?
+function GetAge($Birthdate) {
+        // Explode the date into meaningful variables
+        list($BirthDay,$BirthMonth,$BirthYear) = explode("/", $Birthdate);
+        // Find the differences
+        $YearDiff = date("Y") - $BirthYear;
+        $MonthDiff = date("m") - $BirthMonth;
+        $DayDiff = date("d") - $BirthDay;
+        // If the birthday has not occured this year
+        if ($DayDiff < 0 || $MonthDiff < 0)
+        $YearDiff--;
+        return $YearDiff;
+}
+?>
+
+<?
+if (isset($_COOKIE["usertype"])) {
+	include("_main.header.logged.in.php");	
+} else {
+	include("_main.header.php");	
+}
+?>
+
+<?
+if(isset($_POST['epc']) && isset($_POST['cpm'])) {
+include('dbase.php');
+include('settings.php');
+mysql_query("UPDATE chatmodels SET cpm='$_POST[cpm]',epercentage='$_POST[epc]' WHERE id = '$_POST[id]' LIMIT 1");
+}
+?>
+
+<?
+	//$secondsThisMonth=time(i)*60+time(G)*3600+time(j)*86400
+	//$secondsAll=time();
+	include('dbase.php');
+	$result = mysql_query("SELECT * FROM chatmodels WHERE user='$_GET[model]' LIMIT 1");
+		while($row = mysql_fetch_array($result)) {
+		$tempUser=$row["user"];
+		$tempPass1=$row["password"];
+		$tempPass2=$row["password"];
+		$tempEmail=$row["email"];
+		$status=$row['status'];
+		$tL1=$row["language1"];
+		$tL2=$row["language2"];
+		$tL3=$row["language3"];
+		$tL4=$row["language4"];
+		
+		$tBirthD=$row["birthDate"];
+                $tBirthD= GetAge($row["birthDate"]);
+                //echo $row["birthDate"];
+		$tBraS=$row["braSize"];
+		$tBirthS=$row["birthSign"];
+		$tMessage=$row["message"];
+		$tFantasies=$row["fantasies"];
+		$tPosition=$row["position"];
+		$tEthnic=$row["ethnicity"];
+		$tEyeC=$row["eyeColor"];
+		$tHeight=$row["height"];
+		$tWeight=$row["weight"];
+		$tHeightM=$row["heightMeasure"];
+		$tWeightM=$row["weightMeasure"];
+		
+		$cpm=$row["cpm"];
+		$epc=$row["epercentage"];
+		$tCategory=$row["category"];
+		$rowdate=$row["dateRegistered"];
+		$date=date("d F Y,H:i",$rowdate);
+		
+		$tempName = $row["name"];
+		
+		$result3=mysql_query("SELECT name FROM countries WHERE id='$row[country]' LIMIT 1");
+		while($row3 = mysql_fetch_array($result3)) {
+			$tempCountry=$row3[name];
+		}
+		
+		$tempState=$row["state"];
+		$tempZip = $row["zip"];
+		$tempCity=$row["city"];
+		$tempAdress = $row["adress"];
+		$tempPMethod=$row["pMethod"];
+		$tempPInfo=$row["pInfo"];
+		$tOwner=$row['owner'];
+		$tempIdmonth=$row['idmonth'];
+		$tempIdyear=$row['idyear'];
+		$tempIdtype=$row['idtype'];
+		$tempIdnumber=$row[idnumber];
+		$tempSs=$row[ssnumber];
+		$tempPhone=$row[phone];
+		$tempBirth=$row[birthplace];
+		$tempYahoo=$row[yahoo];	
+		$tempMsn=$row[msn];	
+		$tempIcq=$row[icq];	
+		
+		$tHcolor=$row[hairColor];
+		$tHlength=$row[hairLength];
+		$tPhair=$row[pubicHair];	
+		$tBfrom=$row[broadcastplace];
+		$tHobbies=$row[hobby];
+		$tempFax=$row[fax];	
+		$monday=$row[monday];
+		$tuesday=$row[tuesday];
+		$wednesday=$row[wednesday];
+		$thursday=$row[thursday];
+		$friday=$row[friday];
+		$saturday=$row[saturday];
+		$sunday=$row[sunday];
+	}
+?>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+	$("img.lazy").lazyload({effect : "fadeIn", effectspeed: 1 }).removeClass("lazy");
+	$('.showThumbnail').live('mouseenter', function() {
+     		$(this).find(':first-child').css('display', 'none');
+     		var hiddenDiv = $(this).find(':last-child');
+      		var iFrameHtml = hiddenDiv.html();
+      		if (iFrameHtml.indexOf('iframe') == -1) {
+      			var username = $(this).attr('rel');
+      			hiddenDiv.html('<iframe width="100%" class="showThumbnail" href="liveshow.php?model='+username+'" height="auto" src="thumbnail.php?model='+username+'" scrolling="no" frameborder="0"  allowfullscreen></iframe>');
+      		}
+      	hiddenDiv.css('display', 'block');
+    	});
+	$('.showThumbnail').live('mouseleave', function() {
+      		var hiddenDiv = $(this).find(':last-child');
+      		hiddenDiv.css('display', 'none');
+      		hiddenDiv.html('');
+      		$(this).find(':first-child').css('display', 'block');
+	});
+	$(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+	$( "#next" ).click(function() {
+		<?php
+		$row=mysql_fetch_object(mysql_query("SELECT user from chatmodels  WHERE user!='{$_GET[model]}' ORDER BY RAND() LIMIT 1"));
+		$next=$row->user;
+		unset($row);
+		?>
+		window.location='liveshow.php?model=<?=$next;?>';
+	});
+});
+$(document).ready(function() {
+    	$("#bio").fancybox( {
+     		'onStart':function(){ $.fancybox.hideActivity(); },
+		'onComplete':function(){ $.fancybox.hideActivity(); }, 
+		'autoSize':true,
+		'openEffect':'none',
+		'padding':0,
+		'margin':10,
+		'scrolling':'no',
+    		'transitionIn':'fade',
+    		'transitionOut':'fade',
+    		'titleShow':false,
+    		'overlayColor':'#8F0000',
+    		'overlayOpacity':0.8,
+		'closeBtn':false,
+        }).trigger('click');
+});
+$(document).ready(function() {
+    	$(".showThumbnail").fancybox( {
+     		'onStart':function(){ $.fancybox.hideActivity(); },
+		'onComplete':function(){ $.fancybox.hideActivity(); }, 
+		'autoSize':true,
+		'openEffect':'none',
+		'padding':0,
+		'margin':20,
+		'scrolling':'no',
+    		'transitionIn':'fade',
+    		'transitionOut':'fade',
+    		'titleShow':false,
+    		'overlayColor':'#8F0000',
+    		'overlayOpacity':0.8,
+        }); 
+	$('#layer').mousedown(function() {
+  		alert('mouse down');
+	});
+});
+function openchatbox(model){
+	alert(model);
+}
+</script> 
+
+<?
+include("dbase.php");
+include("settings.php");
+$result=mysql_query("SELECT user from chatusers WHERE id='$_COOKIE[id]' LIMIT 1");
+while($row = mysql_fetch_array($result)) {
+	$username=$row['user'];	
+}
+?>
+
+<div class="body-container">
+    <div class="col-md-12 no-padd" align="center">
+        <?php
+        require_once ('Mobile_Detect.php');
+        $detect = new Mobile_Detect();
+        if ($detect->isPuffin()) { // Detecta si es Puffin
+            echo '<ul class="w100 bar_profile topmenu" id="css-menu">';
+        } else { 
+            echo '<ul class="bar_profile topmenu" id="css-menu">';
+        }
+        ?>
+	    <li class="topmenu col-md-2" align="left">
+	  	<a href="javascript:history.go(-1)"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Go Back</a>
+	    </li>
+	    <h2 class="topmenu col-md-8" align="center"><? echo $tempUser;?></h2>
+	    <li class="topmenu col-md-2" align="right">
+	  	<a id="next" class="right">Next Performer&nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></a>
+	    </li>
+        </ul>
+        <br><br>
+        <?
+	if (isset($_COOKIE['usertype']) && $_COOKIE['usertype']=="chatusers") {
+		$result = mysql_query('SELECT cpm FROM chatmodels WHERE user="'.$_GET[model].'" LIMIT 1');
+		while($row = mysql_fetch_array($result)) {
+			$cpm=$row['cpm'];
+		};
+		$result = mysql_query('SELECT id,user,money,freetime,freetimeexpired FROM chatusers WHERE id="'.$_COOKIE[id].'" LIMIT 1');
+		while($row = mysql_fetch_array($result)) {
+			$freetime=$row['freetime'];
+			$freetimeexpired=$row['freetimeexpired'];
+			$sUser=$row['user'];
+			$sId=$row['id'];
+			$nMoney=$row['money'];
+		}
+		if ($freetime==0 && (time()-$freetimeexpired)>(3600*$freehours)) {
+			mysql_query("UPDATE chatusers SET freetime='120', freetimeexpired='0' WHERE id='$_COOKIE[id]' LIMIT 1");
+			$freetime=110;
+		}
+		$result=mysql_query("SELECT * from favorites WHERE member='$sUser' AND model='$_GET[model]'");
+		if (mysql_num_rows($result)>=1) {
+			$nFav=1;
+		} else {
+			$nFav=0;
+		}
+	} else {
+		$sUser="guest";
+		$sId="00";
+		$nMoney=0;
+		$nFav=0;
+	}
+	?>
+        <?php
+        require_once ('Mobile_Detect.php');
+        $detect = new Mobile_Detect();
+        if ($detect->isPuffin()) { // Detecta si es Puffin
+	    echo '<div id="bioo" class="w100"><div id="videoLayer" align="center" class="video-container">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="100%" height="100%">
+	    <param name="wmode" value="transparent">
+        <param name=FlashVars value="&fuser=';
+		echo $sUser;
+		echo '&fmodel=';
+		echo $_GET[model];
+		echo '&fid=';
+		echo $sId;
+		echo '&fmoney=';
+		echo $nMoney;
+		echo '&favorite=';
+		echo $nFav;
+		echo '&freetime=';
+		echo $freetime;
+		echo '&connection=';
+		echo $connection_string;
+		echo '&cpm=';
+		echo $cpm;
+		echo '" />
+        <param name="quality" value="high" />
+        <param name="SRC" value="ShowInterface.swf" />
+        <embed flashvars="&fuser=';
+		echo $sUser;
+		echo '&fmodel=';
+		echo $_GET[model];
+		echo '&fid=';
+		echo $sId;
+		echo '&fmoney=';
+		echo $nMoney;
+		echo '&favorite=';
+		echo $nFav;
+		echo '&freetime=';
+		echo $freetime;
+		echo '&connection=';
+		echo $connection_string;
+		echo '&cpm=';
+		echo $cpm;
+		echo '" src="ShowInterface.swf" width="1200" height="600" quality="high" wmode="transparent" pluginspage="https://get.adobe.com/es/flashplayer/" type="application/x-shockwave-flash"></embed>
+        </object></div></div>';
+        } else {
+        echo '<div id="bioo" class="s90"><div id="videoLayer" align="center" class="video-container">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="100%" height="100%">
+	    <param name="wmode" value="transparent">
+        <param name=FlashVars value="&fuser=';
+		echo $sUser;
+		echo '&fmodel=';
+		echo $_GET[model];
+		echo '&fid=';
+		echo $sId;
+		echo '&fmoney=';
+		echo $nMoney;
+		echo '&favorite=';
+		echo $nFav;
+		echo '&freetime=';
+		echo $freetime;
+		echo '&connection=';
+		echo $connection_string;
+		echo '&cpm=';
+		echo $cpm;
+		echo '" />
+        <param name="quality" value="high" />
+        <param name="SRC" value="ShowInterface.swf" />
+        <embed flashvars="&fuser=';
+		echo $sUser;
+		echo '&fmodel=';
+		echo $_GET[model];
+		echo '&fid=';
+		echo $sId;
+		echo '&fmoney=';
+		echo $nMoney;
+		echo '&favorite=';
+		echo $nFav;
+		echo '&freetime=';
+		echo $freetime;
+		echo '&connection=';
+		echo $connection_string;
+		echo '&cpm=';
+		echo $cpm;
+		echo '" src="ShowInterface.swf" width="1200" height="600" quality="high" wmode="transparent" pluginspage="https://get.adobe.com/es/flashplayer/" type="application/x-shockwave-flash"></embed>
+        </object></div></div>';
+        }
+      ?>
+        <br><br>
+        <?php
+        require_once ('Mobile_Detect.php');
+        $detect = new Mobile_Detect();
+        if ($detect->isPuffin()) { // Detecta si es Puffin
+            echo '<ul class="w100 bar_profile topmenu" id="css-menu">';
+        } else { 
+            echo '<ul class="bar_profile topmenu" id="css-menu">';
+        }
+        ?>
+            <li class="topmenu col-md-3" align="center">
+            	<div class="video-frontal"><embed class="" flashvars="&fuser=<? echo $sUser; ?>&fmodel=<? echo $_GET[model]; ?>&fid=<? echo $sId; ?>&fmoney=<? echo $nMoney;?>&favorite=<? echo $nFav;?>&freetime=<? echo $freetime;?>&connection=<? echo $connection_string;?>&cpm=<? echo $cpm; ?>" src="thumbnail.swf" width="300" height="210" quality="high" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed></div>
+            </li>
+            <li class="topmenu col-md-3" align="left">
+                <h4><? echo $tempUser;?>´s Bio</h4>
+                <table>
+        	    <tr>
+          		<td width="37%">Race:</td>
+          		<td width="63%"><?=$tEthnic;?></td>
+        	    </tr>
+        	    <tr>
+          		<td>Age:</td>
+          		<td><?=$tBirthD;?></td>
+        	    </tr>
+        	    <tr>
+          		<td>Location:</td>
+          		<td><?=$tempCountry;?></td>
+        	    </tr>
+    		</table>
+    		<ul id="css-menu" class="topmenu w100">
+		    <li class="topmenu left">
+	  		<a class="bio" href="addfavourite.php?user=<? echo $tempUser ?>&ok=ok"><i class="fa fa-star"></i>&nbsp;&nbsp;Add As Favorite</a>
+	  	    </li>
+	  	</ul>
+            </li>
+            <li class="topmenu col-md-3" align="left">
+                <h4>About Me</h4>
+                <div class="msg"><?=$tMessage;?></div>
+            </li>
+            <li class="topmenu col-md-3" align="left">
+                <h4>My Schedule</h4>
+                <table>
+        	<tr>
+          		<td width="47%">Monday:</td>
+          		<td width="53%"><?=$monday;?></td>
+        	</tr>
+        	<tr>
+          		<td>Tuesday:</td>
+          		<td><?=$tuesday;?></td>
+        	</tr>
+        	<tr>
+          		<td>Wednesday:</td>
+          		<td><?=$wednesday;?></td>
+        	</tr>
+        	<tr>
+          		<td>Thursday:</td>
+          		<td><?=$thursday;?></td>
+        	</tr>
+        	<tr>
+          		<td>Friday:</td>
+          		<td><?=$friday;?></td>
+        	</tr>
+        	<tr>
+          		<td>Saturday:</td>
+          		<td><?=$saturday;?></td>
+        	</tr>
+        	<tr>
+          		<td>Sunday:</td>
+          		<td><?=$sunday;?></td>
+        	</tr>
+   		</table>
+            </li>
+        </ul>
+        <br/><br/>
+	<div>
+	<?
+	if (isset($_COOKIE['usertype']) && $_COOKIE['usertype']=="chatusers") {
+		$result = mysql_query('SELECT cpm FROM chatmodels WHERE user="'.$_GET[model].'" LIMIT 1');
+		while($row = mysql_fetch_array($result)) {
+			$cpm=$row['cpm'];
+		};
+		$result = mysql_query('SELECT id,user,money,freetime,freetimeexpired FROM chatusers WHERE id="'.$_COOKIE[id].'" LIMIT 1');
+		while($row = mysql_fetch_array($result)) {
+			$freetime=$row['freetime'];
+			$freetimeexpired=$row['freetimeexpired'];
+			$sUser=$row['user'];
+			$sId=$row['id'];
+			$nMoney=$row['money'];
+		}
+		if ($freetime==0 && (time()-$freetimeexpired)>(3600*$freehours)) {
+			mysql_query("UPDATE chatusers SET freetime='120', freetimeexpired='0' WHERE id='$_COOKIE[id]' LIMIT 1");
+			$freetime=110;
+		}
+		$result=mysql_query("SELECT * from favorites WHERE member='$sUser' AND model='$_GET[model]'");
+		if (mysql_num_rows($result)>=1) {
+			$nFav=1;
+		} else {
+			$nFav=0;
+		}
+	} else {
+		$sUser="guest";
+		$sId="00";
+		$nMoney=0;
+		$nFav=0;
+	}
+	?>
+	</div>
+	<div id="bioo" style="display:none;"><?php @include('lic.php');?></div>
+	<?
+	@include("images.php");
+	?>
+	<?php
+	$tempUser=$_GET[model];
+	?>
+        <br/><br/>
+    <?php
+        require_once ('Mobile_Detect.php');
+        $detect = new Mobile_Detect();
+        if ($detect->isPuffin()) { // Detecta si es Puffin
+            echo '<div class="title-profile w100" align="center">';
+        } else { 
+            echo '<div class="title-profile w90" align="center">';
+        }
+    ?>
+	    <h3>My Photo Gallery</h3>
+	</div>
+	<?php
+        require_once ('Mobile_Detect.php');
+        $detect = new Mobile_Detect();
+        if ($detect->isPuffin()) { // Detecta si es Puffin
+            echo '<div id="hoverbox" class="w100" align="center">';
+        } else { 
+            echo '<div id="hoverbox" class="w90" align="center">';
+        }
+    ?>
+            <ul class="model_group">
+		<?
+		$count=0;
+		$result = mysql_query('SELECT * FROM modelpictures WHERE user="'.$tempUser.'" ORDER BY dateuploaded DESC');
+		while($row = mysql_fetch_array($result)) {
+			$count++;
+			if ($count==1) { echo"<div>"; }
+			echo "<li class='col-md-3 padd li_group' align='center'>
+			<div class='hoverbox' style='background-image: url(models/".$username."/thumbnail.jpg); background-size: cover; background-repeat: no-repeat;'>
+			<a class='fancybox' href='models/".$tempUser."/".$row['name'].".jpg' rel='group'>
+			<img src ='models/".$tempUser."/".$row['name']."_thumbnail.jpg' border='0' width='100%' height='auto'>
+			</a>
+			</div>
+			</li>";
+				
+			if ($count==4) {
+				echo"</div>";
+				$count=0;
+			}
+		}
+		mysql_free_result($result);
+ 		?>
+ 	    </ul>
+        </div>
+        <br/><br/>
+    <?php
+        require_once ('Mobile_Detect.php');
+        $detect = new Mobile_Detect();
+        if ($detect->isPuffin()) { // Detecta si es Puffin
+            echo '<div class="title-profile w100" align="center">';
+        } else { 
+            echo '<div class="title-profile w90" align="center">';
+        }
+    ?>
+	    <h3>Random Performers</h3>
+	</div>
+	    <?php
+        require_once ('Mobile_Detect.php');
+        $detect = new Mobile_Detect();
+        if ($detect->isPuffin()) { // Detecta si es Puffin
+            echo '<div id="hoverbox" class="w100" align="center">';
+        } else { 
+            echo '<div id="hoverbox" class="w90" align="center">';
+        }
+        ?>
+            <ul class="model_group">
+		<?
+		$count=0;
+		$result = mysql_query("SELECT * FROM chatmodels WHERE user!='$tempUser' AND status='online' ORDER BY rand() LIMIT 4");
+		while($row = mysql_fetch_array($result)) {
+			$count++;
+			if ($count==1) { echo"<div>"; }
+			echo "<li class='col-md-3 padd li_group' align='center'>";
+  			echo '<table width="100%" height="auto" border="0" cellpadding="0" cellspacing="0">';
+			echo '<tr>';
+          		echo '<td height="auto" align="center" valign="middle">';
+          		echo '<div class="div_iframe" style="display: block"><iframe width="300" height="210" src="thumbnail.php?model='.$row["user"].'" style="border:none;" scrolling="no" align="top" frameborder="no" allowtransparency="true" background-color="transparent" allowfullscreen="true"></iframe></div>';
+        		echo '</td><tr></table></li>';
+			if ($count==4){
+				echo"</div>";
+				$count=0;
+			}
+		}
+		mysql_free_result($result);
+ 		?>
+ 	    </ul>
+        </div>
+    </div>
+</div>
+
+<?
+include("_main.footer.php");
+?>
+    
+<map name="Map" id="Map">
+<area shape="rect" coords="14,12,179,50" href="#" />
+</map>
+<map name="Map2" id="Map2">
+<area shape="rect" coords="13,12,180,51" href="#" />
+</map>

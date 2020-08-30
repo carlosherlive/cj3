@@ -1,0 +1,27 @@
+Step1 - Create CC Bill account.
+
+Step2 - Ask CC Bill to setup your account for " Dynamic Pricing ".
+
+Step3 - Ask CC Bill for your account information ( Account Number, Sub Account Number, Form Number, SALT Key.
+
+Step4 - In your CC Bill account admin area create a " form " to your likeing.
+
+Step5 - In your CC Bill account
+
+a)Go to ccbill admin panel 
+b)Select Tools->Account Maintenance->Account Admin->Select Sub Account->Advanced
+c)Check Approval Post URL and make sure it is set like the example below
+
+Your approval post url must be  http://www.example.com/cp/chatusers/ccbillmakepayment.php
+Replace http://www.example.com/  to  your site name
+
+If you have installed the script in a folder within the root of your server it would be like the example below.
+http://www.example.com/your-script-folder/cp/chatusers/ccbillmakepayment.php
+
+Step6 - In your User Managment Settings in your CC Bill account make sure the way you collect usernames and passwords is set to display usernames and passwords.
+
+
+Step7 - navigate to your website admin panel located at http://your-site.com/admin/ then chose the CC Bill option and load your CC Bill account information into the fields and click the configure button.
+
+Step6 - Your Done!
+

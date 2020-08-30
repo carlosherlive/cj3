@@ -1,0 +1,73 @@
+<?php
+error_reporting(0); // Turn off all error reporting
+?>
+
+<?
+if (!isset($_COOKIE["id"]) || $_COOKIE['usertype']!="chatmodels" ) {
+	header("location: ../../login.php");
+} else {
+	include("../../dbase.php");
+	include("../../settings.php");
+	$result=mysql_query("SELECT user from $_COOKIE[usertype] WHERE id='$_COOKIE[id]' LIMIT 1");
+	while($row = mysql_fetch_array($result)) {
+		$username=$row[user];
+	}
+}
+mysql_free_result($result);
+?>
+
+<?
+include("_models.header.php");
+?>
+
+<div class="body-container">
+    <div  class="col-md-12 no-padd" align="center">
+    <?
+    include("../../dbase.php");
+    $model=$username;
+    $tempMoneyEarned=0;
+    $tempMoneySent=0;
+    $result = mysql_query("SELECT * FROM videosessions WHERE model='$model'");
+    while($row = mysql_fetch_array($result)) {
+    	$epercentage=$row['epercentage'];
+    	$duration=$row['duration'];
+    	$cpm=$row['cpm'];
+    	$ammount=(($duration/60)*$cpm)*$epercentage/10000 ;
+    	$tempMoneyEarned+=$ammount;
+    	if ($row['paid']=="1") {
+    	    $tempMoneySent+=$ammount;
+    	}
+    }
+    mysql_free_result($result);
+    $nMoney=$tempMoneyEarned-$tempMoneySent;
+    $result = mysql_query('SELECT id,user,cpm,epercentage FROM chatmodels WHERE id="'.$_COOKIE["id"].'" LIMIT 1');
+    while($row = mysql_fetch_array($result)) {
+	$nCpm=$row[cpm];
+	$sUser=$row[user];
+	$sId=$row[id];
+	$epercentage=$row[epercentage];
+    }
+    ($result);
+    ?>
+    <?php
+    require_once ('../../Mobile_Detect.php');
+    $detect = new Mobile_Detect();
+    if ($detect->isPuffin()) { // Detecta si es Puffin
+	    echo '<div class="w100" align="center"><div id="videoLayer" align="center" class="video-container">';
+    } else {
+        echo '<div class="s90" align="center"><div id="videoLayer" align="center" class="video-container">';
+    }
+    ?>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="1100" height="550">
+          <param name="movie" value="BroadcastInterface.swf" />
+          <param name=FlashVars value="&tepercentage=<? echo $epercentage;?>&fuser=<? echo $sUser; ?>&fcpm=<? echo $nCpm; ?>&fid=<? echo $sId; ?>&fmoney=<? echo $nMoney; ?>&connection=<? echo $connection_string;?>" />
+          <param name="quality" value="high" />
+          <embed flashvars="&tepercentage=<? echo $epercentage;?>&fuser=<? echo $sUser; ?>&fcpm=<? echo $nCpm; ?>&fid=<? echo $sId; ?>&fmoney=<? echo $nMoney; ?>&connection=<? echo $connection_string;?>" src="BroadcastInterface.swf" quality="high" wmode="transparent" pluginspage="https://get.adobe.com/es/flashplayer/" type="application/x-shockwave-flash" width="1100" height="550"></embed>
+        </object>
+        </div></div>
+    </div>
+</div>
+
+<?
+include("_models.footer.php");
+?>

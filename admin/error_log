@@ -1,0 +1,60 @@
+[16-May-2016 18:15:59 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'angelita_us548'@'localhost' (using password: YES) in /home/angelitasonline/public_html/dbase.php on line 2
+[16-May-2016 18:16:02 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'angelita_us548'@'localhost' (using password: YES) in /home/angelitasonline/public_html/dbase.php on line 2
+[16-May-2016 18:17:44 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'angelita_us548'@'localhost' (using password: YES) in /home/angelitasonline/public_html/dbase.php on line 2
+[16-May-2016 18:17:45 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'angelita_us548'@'localhost' (using password: YES) in /home/angelitasonline/public_html/dbase.php on line 2
+[16-May-2016 18:17:47 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'angelita_us548'@'localhost' (using password: YES) in /home/angelitasonline/public_html/dbase.php on line 2
+[16-May-2016 18:17:48 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'angelita_us548'@'localhost' (using password: YES) in /home/angelitasonline/public_html/dbase.php on line 2
+[19-Oct-2016 12:44:27 America/Chicago] PHP Warning:  scandir(../models/delicioso/): failed to open dir: No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[19-Oct-2016 12:44:27 America/Chicago] PHP Warning:  scandir(): (errno 2): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[19-Oct-2016 12:44:27 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[19-Oct-2016 12:44:27 America/Chicago] PHP Warning:  rmdir(../models/delicioso/): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 19
+[08-Mar-2017 21:21:36 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home4/angelitas/public_html/admin/configurepaypal.php on line 17
+[08-Mar-2017 21:22:08 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home4/angelitas/public_html/admin/configurepaypal.php on line 17
+[08-Mar-2017 21:22:31 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home4/angelitas/public_html/admin/configurepaypal.php on line 17
+[08-Mar-2017 21:23:23 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home4/angelitas/public_html/admin/configurepaypal.php on line 17
+[20-Mar-2017 16:12:56 America/Chicago] PHP Parse error:  syntax error, unexpected '<', expecting '(' in /home4/angelitas/public_html/admin/configurepaypal.php on line 66
+[20-Mar-2017 16:13:30 America/Chicago] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE), expecting '(' in /home4/angelitas/public_html/admin/configurepaypal.php on line 66
+[20-Mar-2017 16:13:37 America/Chicago] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE), expecting '(' in /home4/angelitas/public_html/admin/configurepaypal.php on line 66
+[20-Mar-2017 16:15:13 America/Chicago] PHP Parse error:  syntax error, unexpected ''.<?=$row['' (T_CONSTANT_ENCAPSED_STRING), expecting '(' in /home4/angelitas/public_html/admin/configurepaypal.php on line 66
+[20-Mar-2017 16:53:29 America/Chicago] PHP Parse error:  syntax error, unexpected 'sandbox_mode' (T_STRING) in /home4/angelitas/public_html/admin/configurepaypal.php on line 66
+[20-Mar-2017 17:01:46 America/Chicago] PHP Parse error:  syntax error, unexpected '<' in /home4/angelitas/public_html/admin/configurepaypal.php on line 16
+[19-Apr-2017 15:27:51 America/Chicago] PHP Warning:  scandir(../models/AARON/): failed to open dir: No such file or directory in /home4/angelitas/public_html/admin/rejectsubmission.php on line 46
+[19-Apr-2017 15:27:51 America/Chicago] PHP Warning:  scandir(): (errno 2): No such file or directory in /home4/angelitas/public_html/admin/rejectsubmission.php on line 46
+[19-Apr-2017 15:27:51 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/angelitas/public_html/admin/rejectsubmission.php on line 47
+[19-Apr-2017 15:27:51 America/Chicago] PHP Warning:  rmdir(../models/AARON/): No such file or directory in /home4/angelitas/public_html/admin/rejectsubmission.php on line 54
+[09-May-2017 19:34:12 America/Chicago] PHP Warning:  scandir(../models/PALOMA/): failed to open dir: No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[09-May-2017 19:34:12 America/Chicago] PHP Warning:  scandir(): (errno 2): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[09-May-2017 19:34:12 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[09-May-2017 19:34:12 America/Chicago] PHP Warning:  rmdir(../models/PALOMA/): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 19
+[09-May-2017 21:37:33 America/Chicago] PHP Warning:  scandir(../models/SACHA/): failed to open dir: No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[09-May-2017 21:37:33 America/Chicago] PHP Warning:  scandir(): (errno 2): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[09-May-2017 21:37:33 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[09-May-2017 21:37:33 America/Chicago] PHP Warning:  rmdir(../models/SACHA/): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 19
+[11-May-2017 07:43:39 America/Chicago] PHP Warning:  scandir(../models/CHLOEKUAN/): failed to open dir: No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[11-May-2017 07:43:39 America/Chicago] PHP Warning:  scandir(): (errno 2): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[11-May-2017 07:43:39 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[11-May-2017 07:43:39 America/Chicago] PHP Warning:  rmdir(../models/CHLOEKUAN/): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 19
+[11-May-2017 20:56:41 America/Chicago] PHP Warning:  scandir(../models/ADELYN/): failed to open dir: No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[11-May-2017 20:56:41 America/Chicago] PHP Warning:  scandir(): (errno 2): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[11-May-2017 20:56:41 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[11-May-2017 20:56:41 America/Chicago] PHP Warning:  rmdir(../models/ADELYN/): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 19
+[26-May-2017 19:41:44 America/Chicago] PHP Warning:  scandir(../models/HazelChallinda/): failed to open dir: No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[26-May-2017 19:41:44 America/Chicago] PHP Warning:  scandir(): (errno 2): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[26-May-2017 19:41:44 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[26-May-2017 19:41:44 America/Chicago] PHP Warning:  rmdir(../models/HazelChallinda/): No such file or directory in /home4/angelitas/public_html/admin/dodeleteaccount.php on line 19
+[13-Oct-2017 06:40:46 America/Bogota] PHP Warning:  scandir(../models/maryli/): failed to open dir: No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[13-Oct-2017 06:40:46 America/Bogota] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[13-Oct-2017 06:40:46 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[13-Oct-2017 06:40:46 America/Bogota] PHP Warning:  rmdir(../models/maryli/): No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 19
+[11-Nov-2017 08:28:03 America/Bogota] PHP Warning:  scandir(../models/Layla314/): failed to open dir: No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[11-Nov-2017 08:28:03 America/Bogota] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[11-Nov-2017 08:28:03 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[11-Nov-2017 08:28:03 America/Bogota] PHP Warning:  rmdir(../models/Layla314/): No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 19
+[12-Nov-2017 08:02:20 America/Bogota] PHP Warning:  scandir(../models/esperanza/): failed to open dir: No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[12-Nov-2017 08:02:20 America/Bogota] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[12-Nov-2017 08:02:20 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[12-Nov-2017 08:02:20 America/Bogota] PHP Warning:  rmdir(../models/esperanza/): No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 19
+[12-Nov-2017 16:18:19 America/Bogota] PHP Warning:  scandir(../models/esperanza/): failed to open dir: No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[12-Nov-2017 16:18:19 America/Bogota] PHP Warning:  scandir(): (errno 2): No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 11
+[12-Nov-2017 16:18:19 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home/angelitas/public_html/admin/dodeleteaccount.php on line 12
+[12-Nov-2017 16:18:19 America/Bogota] PHP Warning:  rmdir(../models/esperanza/): No such file or directory in /home/angelitas/public_html/admin/dodeleteaccount.php on line 19

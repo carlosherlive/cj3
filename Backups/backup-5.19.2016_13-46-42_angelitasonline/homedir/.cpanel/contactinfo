@@ -1,0 +1,13 @@
+--- 
+"email": 'andresfrancolopez@hotmail.com'
+"ip": '179.189.23.17'
+"notify_bandwidth_limit": 1
+"notify_contact_address_change": 1
+"notify_contact_address_change_notification_disabled": 1
+"notify_disk_limit": 1
+"notify_email_quota_limit": 1
+"notify_password_change": 1
+"notify_password_change_notification_disabled": 1
+"origin": 'cpanel'
+"pushbullet_access_token": ''
+"second_email": ''

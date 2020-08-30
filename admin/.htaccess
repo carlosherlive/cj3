@@ -1,0 +1,5 @@
+AuthType Basic
+AuthUserFile "/var/www/html/cj3/admin/.htpasswd"
+AuthName  "Protected Site"
+AuthType Basic
+Require valid-user

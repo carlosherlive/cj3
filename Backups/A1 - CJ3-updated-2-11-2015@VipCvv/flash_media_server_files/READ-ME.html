@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+.style2 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+<div align="center">
+  <table width="1000" height="50" border="0" cellpadding="10">
+    <tr>
+      <td width="953" valign="top" bgcolor="#990000"><p><span class="style1">SETTING UP THE FLASH MEDIA SERVER</span><br />
+      </p>      </td>
+    </tr>
+    <tr>
+      <td><p>This is so easy. You will need an FTP client such as FileZilla.<br />
+        You can get it free here.<br />
+        https://filezilla-project.org/</p>
+        <p>FTP into your Flash Media Server and open the folder named <br />
+  &quot;applications&quot;. Inside that folder create a folder and name it <br />
+          whatever you want. (example:  &quot;adult&quot; or &quot;webcams&quot;). upload the <br />
+  &quot;main.asc&quot; file into the new folder you created. Now your Flash <br />
+          server is setup properly.</p>
+        <p>NEXT&gt;&gt;&gt;&gt;</p>
+        <p>Next you need to find your Flash hosting RTMP address. If you <br />
+          are using Serverroom.net for you Flash hosting then your RTMP <br />
+          address should look like this.</p>
+        <p>RTMP://your-account.srfms.com/</p>
+        <p>Using the text editor of your choice open the file named &quot;settings.php&quot; which is located in the root <br />
+          of the script. You will see a sample RTMP address in the file code, <br />
+          simply replace the sample with your real RTMP address.</p>
+        <p>WAIT!  That's NOT all....</p>
+        <p>At the very end of your RTMP address you need to add a forward <br />
+          slash followed by the name of the folder you created in the <br />
+  &quot;applications&quot; folder on the Flash Media Server. So lets say you <br />
+          used one of my examples and named your folder &quot;webcams&quot;, your RTMP <br />
+          address in the &quot;settings.php&quot; file should look like this.</p>
+        <p>rtmp://your-account.srfms.com/webcams/</p>
+        <p>DO NOT FORGET THE LAST FORWARD SLASH AT THE END OF THIS URL. /</p>
+        <p>rtmp://your-account.srfms.com/webcams<span class="style2">/</span> &lt;&lt;&lt;----- This forward slash </p>
+        <p>SAVE the &quot;settings.php&quot; file and upload it to your regular <br />
+          hosting server in the root folder of your script.</p>
+      <p>Flash Media Server is now setup. </p></td>
+    </tr>
+    <tr>
+      <td><p>&nbsp;</p>
+      <p>FLUFFVISION - 2014 </p></td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+</body>
+</html>

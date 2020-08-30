@@ -1,0 +1,16 @@
+{
+  "xirsys": {
+    "gateway": "global.xirsys.net",
+    "info": {
+      "ident": "seienshi",
+      "secret": "9778485e-677e-11e9-b2cd-0242ac110003",
+      "channel": "examples"
+    },
+    "allowedServices": ["/_token", "/_host", "/_data", "/_ns", "/_turn"],
+    "overrideAllowedChannel": false
+  },
+  "host":{
+    "httpport": 3080,
+    "httpsport": 3443
+  }
+}

@@ -1,0 +1,422 @@
+<?php
+require_once ('Mobile_Detect.php');
+$detect = new Mobile_Detect();
+if ($detect->isPuffin()) { // Detecta si es Puffin
+
+} else if ($detect->isMobile()) { // Detecta si es un móvil
+	//header ("Location: mobile.php");
+} else if ($detect->isTablet()) { // Si es un tablet
+	//header ("Location: mobile.php");
+} else if ($detect->isAndroidOS()) { // Si es Android
+	//header ("Location: mobile.php");
+} else if ($detect->isiOS()) { //Si es iOS
+	//header ("Location: mobile.php");
+}
+?>
+<?php
+//session_start();
+//error_reporting(E_ALL);
+//header("Cache-control: private");
+if($_POST['Submit']){
+	$allempty = false;
+	foreach ($_POST as $p) {
+		if (empty($p)) $allempty = true;
+	}
+	if (!$allempty){
+    	include_once "dbase.php";
+	include_once "settings.php";
+
+	$errorMsg = "";
+	$username = $_POST['UserName'];
+	if (!get_magic_quotes_gpc()){
+		$username = addslashes($username);
+	}
+
+	$result = mysql_query("SELECT user FROM chatusers WHERE user='$username'") or die(mysql_error());
+
+	if (mysql_num_rows($result)==1) $errorMsg='<p align="center" style="color: #FC0; background: #800; margin: 25px 20%; padding: 15px 0; border-radius: 10px;">Username exists, please choose another one!</p>';
+	if(md5($_POST['Password1'])!=md5($_POST['Password2'])) $errorMsg='<p align="center" style="color: #FC0; background: #800; margin: 25px 20%; padding: 15px 0; border-radius: 10px;">Passwords do not match.</p>';
+	if(strlen($_POST['UserName'])< 6 || strlen($_POST['UserName'])>15) $errorMsg='<p align="center" style="color:#FC0; background:#800; margin: 25px 20%; padding: 15px 0; border-radius: 10px;">Username must be 6 to 15 characters long and may not contain spaces.</p>';
+	if(strlen($_POST['Password1'])< 6 || strlen($_POST['Password1'])> 15) $errorMsg='<p align="center" style="color:#FC0; background:#800; margin: 25px 20%; padding: 15px 0; border-radius: 10px;">Passwords must be 6 to 15 characters long and may not contain spaces.</p>';
+	//if (preg_match("/^[a-z0-9]+?\.
+	if ($errorMsg == ""){
+		$dateRegistered=time();
+		$currentTime=date("YmdHis");
+		$userId=md5("$currentTime".$_SERVER['REMOTE_ADDR']);
+		$db_pass=md5($_POST['Password1']);
+
+		$_SESSION['UID']=$userId;
+		$_SESSION['email']=$_POST['Email'];
+		$_SESSION['password']=$_POST['Password1'];
+		$_SESSION['emailtype']=$_POST['emailtype'];
+
+		$subject = "Your account activation at $siteurl";
+
+		if ($_POST['emailtype']=="text"){
+			$message = "Thank you for registering at $siteurl. \n
+
+			In order to activate your newly created account clcik on or copy and paste the link below in your browser:
+
+			 $siteurl/actm.php?UID=$userId
+
+			 Once you activate your membership you will recieve an email with your login information.\n\n
+
+			Thanks!
+			The Webmaster
+
+			This is an automated response, please do not reply!";
+		}
+		else if($_POST['emailtype']=="html"){
+			$message = "Thank you for registering at $siteurl
+
+			In order to activate your newly created account click on or copy and paste the link below in your browser:
+			<br><br>
+			<a href='$siteurl/actm.php?UID=$userId'>$siteurl/actm.php?UID=$userId</a><br><br>
+			Once you activate your membership you will recieve an email with your login information.<br><br>
+			Thanks! <br>
+			The Webmaster <br>
+			This is an automated response, please do not reply!<br>";
+		}
+
+		include_once("settings.php");
+		$header = "From: ".$registrationemail;
+		mail($_POST['Email'], $subject, $message, $header);
+
+		mysql_query("INSERT INTO chatusers ( id , user , password , email , name , country , state , city, phone, zip , adress , dateRegistered,lastLogIn, emailnotify ,smsnotify,status,emailtype ) VALUES ('$userId','$username', '{$_POST['Password1']}', '{$_POST['Email']}', '', '', '','','', '', '', '$dateRegistered', '$currentTime','0','0','pending','{$_POST['emailtype']}')") or die(mysql_error());
+		header("Location: registration/userregistered.php");
+	}}
+}
+?>
+
+<html xmlns="https://www.w3.org/1999/xhtml" lang="es" xml:lang="en">
+<?
+include("dbase.php");
+include("settings.php");
+$nTime=time();
+	//we set the status to offline to models that have not changed theyr status for 30 seconds
+	mysql_query("UPDATE chatmodels SET status='offline' WHERE $nTime-lastupdate>30 AND status!='rejected' AND status!='blocked' AND status!='pending' AND forcedOnline='0'");
+?>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="google" content="notranslate" />
+  <title><? echo $sitename; ?> - Live Sex Cam Shows, Free Webcam Chat</title>
+  <meta name="description" content="Chat for FREE and watch HD Cams with Live Sex! Our Models are waiting for you. Enjoy a Private Show with the girl of your dreams now! NO registration required." />
+  <meta name="keywords" content="en vivo, sexo, cams, cam, real, web, amateur, webcams, personal, livesex, sexo en vivo, free sex videos, sexvideos, free porn videos, porn videos, free videos, gratis, real, cámara web, cam, cams, chicas, video, women, lesbianas, porn, porno, men, guys, nude, privado, pussy, sexy, camgirls, homecams, video chat, vídeo gratis, xxx, adulto, naked" />
+  <meta name="google-site-verification" content="QBZgi2zWrY1xY1ZJaxaADyw1tTbbQyhw8Qjg8qEmCRo" />
+  <link rel="canonical" href="https://www.sexliive.com/" />
+  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="common/css-menu/style.css" type="text/css" />
+  <link rel="stylesheet" href="common/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="common/css/font-awesome.css" type="text/css" />
+  <link rel="stylesheet" href="styles.css" type="text/css"/>
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" type="text/css" media="screen" />
+
+  <script type="text/javascript" src="js/jquery-3.2.0.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://malsup.github.io/jquery.cycle.all.js"></script>
+  <script type='text/javascript' src='js/jquery.lazyload.min.js'></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script type="text/javascript" src="js/lightbox.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript" src="common/js/bootstrap.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/707bd3388d.js" crossorigin="anonymous"></script>
+  <script src="js/webrtc/modernizr.custom.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" />
+</head>
+
+<body>
+
+<script>
+	function viewsearch(){
+        if ($("#inputsearch").hasClass('opensearch')) {
+        	$("#inputsearch").removeClass('opensearch');
+        	$("#inputsearch").addClass('closesearch');
+        	$("#searchmovil").addClass('subir');
+        	$("#searchmovil").removeClass('bajar');
+        }else{
+        	$("#inputsearch").addClass('opensearch');
+        	$("#inputsearch").removeClass('closesearch');
+        	$("#searchmovil").addClass('bajar');
+        	$("#searchmovil").removeClass('subir');
+        }
+    }
+
+function myFunction() {
+  var x = document.getElementById("Demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+<script>
+function myFunction1() {
+  var x = document.getElementById("Demo1");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+<div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header w3-hide-small">
+          		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            	<div class="title-popup">
+            		Create Your <span>Free</span> account now,<br><b>it takes only a few seconds</b>
+          		</div>
+           </div>
+           	<div class="modal-body">
+           		<div class="form-register col-sm-4">
+				<form method="post" action="registration/user.php">
+              			<h3 class="color-yellow">No credit card required</h3>
+				<div class="form-group w3-hide-small">
+                		     <label class="color-w"><i class="fa fa-envelope"></i> Email address:</label>
+			     	     <input type="email" class="form-control" maxlength="40" required="required">
+				</div>
+				<div class="form-group w3-hide-small">
+                                     <label class="color-w"><i class="fa fa-user-circle"></i> Username:</label>
+                                     <input type="text" class="form-control" maxlength="40" required="required">
+                                </div>
+				<div class="form-group w3-hide-small">
+                                     <label class="color-w"><i class="fa fa-key"></i> Password:</label>
+                                     <input type="password" class="form-control" maxlength="40" required="required">
+                                </div>
+				<div class="form-group w3-hide-small">
+                		     <div class="rem no-pad">
+                    			<input class="w3-hide-small" id="inlineCheckbox1" value="option1" checked="" type="checkbox" ng-required="true" required="required">
+                    			<label class="checkbox-inline color-w" for="inlineCheckbox1">
+					<span>I am over 18 years old. I have read the </span>
+					     <a href="#" target="_blank"><b class="color-yellow">Terms and Conditions.</b></a>
+					</label>
+                		    </div>
+                                 </div>
+				<input class="btn btn-gold btn-lg btn-block w3-hide-small" type="submit" style="width:80%" value="Create Account">
+            			<div style="text-align:center">
+					<a href="registration/user.php" class="btn-lrg btn btn-gold w3-hide-large" style="width:60%">Create Account</a>
+				</div>
+				</form>
+			</div>
+			<div class="col-sm-4">
+				<div class="title_free_tokens">
+				     Get <span class="color-yellow">5</span> tokens<br>FREE!<br>
+				     <span class="color-yellow">Initial Bonus</span>
+				</div>
+              			<div class="title_free_tokens">
+                			<span>Do you want to register as a performer?</span>
+                			<br><br>
+                			<a href="registration/model.php" class="btn-lrg btn btn-gold" style="width:60%">Click Here</a>
+                			<br>
+                			<span style="font-size:18px;">The site contains sexually explicit material. Enter ONLY if you are at least <span class="color-yellow">18</span> years of age and accept our</span>
+              			</div>
+			</div>
+			<div class="col-sm-4 w3-hide-small">
+<div class="img-rg">
+              <img src="https://www.angelitasonline.com/images/model.png" class="img-responsive" style="max-width:70%">
+            </div>
+			</div>
+       		</div>
+           <div class="modal-footer">
+	       <div class="title-popup">If you are over <span class="color-yellow">18</span> and do not want to register
+			<a class="btn btn-gold parpadea" data-dismiss="modal"  aria-label="Close">Enter</a>
+			If you are under <span class="color-yellow">18</span>, Please
+			<a href="javascript:history.go(-1)" class="btn btn-gold parpadea">Exit</a>
+		</div>
+         <!-- <a href="#" data-dismiss="modal" class="btn btn-danger">Cerrar</a>-->
+           </div>
+      </div>
+   </div>
+</div>
+
+<div id="banner18" class="girls_blue" style="display: none;">
+    <table>
+    	<tbody>
+    	    <tr>
+      		<td>
+        	    <div class="popup join">
+          		<div class="title_h2 title_few_seconds color-yellow">Create your <span class="b">FREE</span> account now,<br> <span>it only takes a few seconds</span></div>
+                      	<div class="title_h2 title_free_tokens color-w">¡Get <span class="b color-yellow">5</span> tokens FREE! <br><span class="initial_bonus step_text color-yellow">Initial Bonus</span></div>
+                    	<div class="nocc color-yellow">No credit card required</div>
+                    	<div class="model-cam">
+                    	    <span>Do you want to register as a performer?</span>
+                    	    <br><br>
+                    	    <a href="/registration/model.php" class="parpadea color-w">Click Here</a>
+                    	</div>
+            	    <form method="post" name="form1" action="registration/user.php">
+            	<div class="form join_form">
+            <li class="col-md-6 li_banner18" align="center">
+            	<table>
+            	    <tr>
+      					<td class="w3-hide-small">
+					    <h4><?
+						if(isset($_POST['UserName']) && $_POST['UserName']=="")
+							echo "<font color=#fff>Choose your Username:</font>";
+						else if(isset($_POST['UserName']) && (strlen(trim($_POST['UserName']))<6 || strlen(trim($_POST['UserName']))>15))
+							echo "<font color=#fff>Choose your Username:</font>";
+						else
+							echo"Choose your Username:";
+					    ?></h4>
+			  		    <input name="UserName"  value="<? if (isset($_POST['UserName'])){ echo $_POST['UserName']; }  ?>" type="text" id="UserName" size="20" maxlength="15">
+			  			</td>
+			  	    </tr>
+    		    <tr class="w3-hide-small">
+      			<td>
+	  		    <h4><? if(isset($_POST['Email']) && $_POST['Email']==""){
+		  		echo "<font color=#fff>Your Email Address:</font>";
+	 	    	    } else {
+	 	    	    	echo"Your Email Address:";
+	 	    	    }?></h4>
+      			    <input name="Email" value="<? if (isset($_POST['Email'])){ echo $_POST['Email']; }  ?>" type="text" id="Email" size="20" maxlength="48"></td>
+    		    </tr>
+    		    <tr class="w3-hide-small">
+      			<td>
+	    		    <h4><?
+				if(isset($_POST['Password1']) && $_POST['Password1']=="")
+					echo "<font color=#fff>Choose a Password:</font>";
+				else if(isset($_POST['Password1']) && (strlen(trim($_POST['Password1']))<6 || strlen(trim($_POST['Password1']))>15))
+					echo "<font color=#fff>Choose a Password:</font>";
+				else
+					echo"Choose a Password:";
+			    ?></h4>
+  			    <input name="Password1" type="password" id="Password1" size="20" maxlength="15">
+  			</td>
+	  	    </tr>
+    		    <tr class="w3-hide-small">
+      			<td>
+      			    <h4><? if(isset($_POST['Password2']) && $_POST['Password2']==""){
+		  		echo "<font color=#fff>Re-type Password:</font>";
+	 	 	    } else {
+	 	 		echo"Re-type Password:";
+	  		    }?></h4>
+	  		    <input name="Password2" type="password" id="Password2" size="20" maxlength="15">
+	  		</td>
+    		    </tr>
+    		    <tr>
+      			<td>
+      			    <input class="check color-w" name="checkbox" type="checkbox" value="checkbox" <? if( isset($_POST['checkbox']) && $_POST[checkbox]=="checkbox"){echo "checked";}?>>&nbsp;&nbsp;I am over 18 years old. I have read the <a href="/registration/memberterms.php" target="_blank" class="color-yellow">Terms and Conditions</a>.
+      			    <input name="emailtype" type="hidden" value="text" checked >
+	  		</td>
+    		    </tr>
+    		    <tr>
+    		        <td>
+      		    	    <div align="center">
+      		        	<h4><?php if ( isset($errorMsg) && $errorMsg!=""){ echo $errorMsg; } ?></h4>
+          			<input type="submit" class="plus18" name="Submit" value="Create Account" />
+      		    	    </div>
+      			</td>
+      		    </tr>
+    		</table>
+    	    </li>
+    	    	</div>
+  		    </form>
+        	    </div>
+      		</td>
+       	    </tr>
+  	</tbody>
+    </table>
+    <div class="no-register">
+        <span class="color-w">If you are over 18 and do not want to register</span>
+        <a href="javascript:parent.$.fancybox.close();" class="parpadea">Enter</a>
+        <span class="color-yellow">If you are under 18, Please</span>
+        <a href="javascript:history.go(-1)" class="parpadea">Exit</a>
+    </div>
+</div>
+
+<?php
+$query=mysql_query("select * from category order by name asc");
+while($row=mysql_fetch_object($query))
+{
+$cats[]=$row->name;
+}
+$cat_array=array_chunk($cats,7);
+$columns=count($cat_array);
+?>
+<header id="header-menu">
+    <div class="header-container">
+        <a href="index.php" class="w3-display-topmiddle w3-hide-large" title:"Home"><img src="images/logosexliive.png" class="logotablet" style="width:80%; padding: 5px; top: 5px;"></a>
+        <a href="index.php" class="w3-hide-small" style="position: absolute;left: 50;top: 12px;" title:"Home"><img src="images/logosexliive.png" style="width:50%; padding: 5px;"></a>
+        <form action="search_model.php" method="post" id="search" class="w3-display-topright w3-hide-small">
+        		<label for="search" style="margin-top:15px;"><i class="fa fa-search" style="color:#FFF; font-size: 23;"></i> </label>
+                <input name="search" type="text" size="40" placeholder="Search..." />
+        </form>
+        <form action="search_model.php" method="post" id="searchmovil" class="w3-display-topright w3-hide-large">
+        		<label for="search" style="margin-top: 5px;"><i class="fa fa-search" style="color:#FFF; font-size: 23;" onclick="viewsearch()"></i> </label>
+                <input id="inputsearch" class="closesearch" name="search" type="text" size="40" placeholder="Search..." />
+        </form>
+        <div class="auto_side w3-dropdown-click">
+        	<button class="w3-button" onclick="myFunction1()" ><i class="fa fa-bars" style="font-size: 20;"></i></button>
+        	<div id="Demo1" class="w3-dropdown-content w3-bar-block w3-border" style="background: linear-gradient(to bottom, rgba(218,0,0,0.8), rgba(166,0,0,0.8))">
+        		<div class="w3-bar-item">
+        			<a href="switchlogin.php" class="signup-button" style="width:100%"><i class="fa fa-user-circle"></i>&nbsp;&nbsp;Login</a>
+        		</div>
+        		<div class="w3-bar-item">
+        			<a href="switchregistration.php" class="signup-button" style="width:100%"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Register</a>
+        		</div>
+        		<div class="w3-dropdown-click">
+        			<button class="w3-button" onclick="myFunction()" style="color: #fff">Categories</button>
+        			<div id="Demo" class="w3-dropdown-content"  style="background: linear-gradient(to bottom, rgba(218,0,0,0.8), rgba(166,0,0,0.8))">
+	        			<?php
+							foreach($cat_array as $cat)
+							{
+								foreach($cat as $c)
+								{
+									echo '<a class="w3-bar-item w3-button"  style="color: #fff!important; font-size:13px;" href="category.php?category='.$c.'">'.$c.'</a>';
+								}
+							}
+						?>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="hide right_side col-sm-6 ">
+		    <ul id="css-menu" class="topmenu">
+			<li class="topmenu w3-hide-small">
+			    <a href="login_member.php"><i class="fa fa-user-circle"></i>&nbsp;&nbsp;Login</a>
+			</li>
+			<li class="topmenu w3-hide-small">
+			    <a href="registration/user.php"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Register</a>
+			</li>
+		    </ul>
+		    <ul id="css-menu" class="topmenu mar-rig left w3-hide-small">
+			<li class="topmenu">
+			    <a href="index.php"><i class="fa fa-video-camera"></i>&nbsp;&nbsp;Live WebCams</a>
+			</li>
+			<li class="topmenu">
+			    <a href="#"><i class="fa fa-bars"></i>&nbsp;&nbsp;Categories&nbsp;<i class="fa fa-caret-down"></i></a>
+		            <div class="submenu" style="width:<?=(120*$columns);?>px;">
+				<?php
+				foreach($cat_array as $cat)
+				{
+				echo '<div class="column" style="width:'.(100/$columns).'%"><ul>';
+				foreach($cat as $c)
+				{
+				echo '<li><a href="category.php?category='.$c.'">'.$c.'</a></li>';
+				}
+				echo '</ul></div>';
+				}
+				?>
+			    </div>
+			</li>
+		    </ul>
+        </div>
+    </div>
+</header>
+<script>
+$(document).ready(function() {
+	/*if(!localStorage.getItem("modalAbierto"))
+	{
+		localStorage.setItem("modalAbierto", true);
+		$("#mostrarmodal").modal("show");
+	}*/
+});
+</script>

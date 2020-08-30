@@ -1,0 +1,43 @@
+; cPanel first:11.52.5.0 (update_time):1462165464 11.52.5.0: Cpanel::ZoneFile::VERSION:1.3 hostname:crv.websitewelcome.com latest:11.52.5.0
+; Zone file for angelitasonline.com
+$TTL 14400
+@      86400	IN      SOA     ns1.itarare.co. julian.live.com.co. (
+		2016050203	; serial, todays date+todays
+		86400		; refresh, seconds
+		7200		; retry, seconds
+		3600000		; expire, seconds
+		86400 )		; minimum, seconds
+
+angelitasonline.com. 86400 IN NS ns1.itarare.co.
+angelitasonline.com. 86400 IN NS ns2.itarare.co.
+
+
+angelitasonline.com. IN A 192.185.155.237
+
+localhost.angelitasonline.com. IN A 127.0.0.1
+
+angelitasonline.com. IN MX 0 angelitasonline.com.
+
+mail IN CNAME angelitasonline.com.
+www IN CNAME angelitasonline.com.
+ftp IN CNAME angelitasonline.com.
+
+angelitasonline.com. IN TXT "v=spf1 a mx include:websitewelcome.com ~all"
+cpanel IN A 192.185.155.237
+webdisk IN A 192.185.155.237
+cpcalendars IN A 192.185.155.237
+cpcontacts IN A 192.185.155.237
+whm IN A 192.185.155.237
+webmail IN A 192.185.155.237
+autoconfig IN A 192.185.155.237
+autodiscover IN A 192.185.155.237
+_autodiscover._tcp IN SRV 0 0 443 cpanelemaildiscovery.cpanel.net.
+_caldav._tcp IN SRV 0 0 2079 crv.websitewelcome.com.
+_caldavs._tcp IN SRV 0 0 2080 crv.websitewelcome.com.
+_carddav._tcp IN SRV 0 0 2079 crv.websitewelcome.com.
+_carddavs._tcp IN SRV 0 0 2080 crv.websitewelcome.com.
+_caldav._tcp IN TXT path=/
+_caldavs._tcp IN TXT path=/
+_carddav._tcp IN TXT path=/
+_carddavs._tcp IN TXT path=/
+default._domainkey IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmtcZxesrg0cjr8UL1/UuMFWqsFwp1jsLHFf71lGdF2SSo17Ipp0C8JfUeiw+YQYy4Zvgn0kuqPdESwKqdG+T4C8J5eU98YTaehrLwFebw24a1HbiYkXcIoWkg5I34tiUsTvvTUKFUP6VZJfb5b32pYGFMFL5kHBbox3B7EIB2cLBc0f08VjTpxEa/n8WbZl1Y" j7s0NNwbRczXdEnAEEnAI55pLtdEld187LueQWm910jOrhqWvCbTB4st7TtywPQispAR+Xnh3p47hBDdccSnZ9bziLpU7P4WjxdFvxEe+TMGkRP3fVsGd1qjZW/05yFXCP7CZKVUdk2PLugMlru0QIDAQAB\;

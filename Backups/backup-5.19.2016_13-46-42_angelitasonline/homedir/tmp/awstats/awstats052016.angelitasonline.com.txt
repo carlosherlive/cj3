@@ -1,0 +1,536 @@
+AWSTATS DATA FILE 7.4 (build 20140726)
+# If you remove this file, all statistics for date 201605 will be lost/reset.
+# Last config file used to build this data file was /home/angelitasonline/tmp/awstats/awstats.angelitasonline.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2023                
+POS_TIME 2707                
+POS_VISITOR 10084               
+POS_DAY 13050               
+POS_DOMAIN 3595                
+POS_LOGIN 4009                
+POS_ROBOT 4205                
+POS_WORMS 4679                
+POS_EMAILSENDER 4810                
+POS_EMAILRECEIVER 4953                
+POS_SESSION 13556               
+POS_SIDER 13766               
+POS_FILETYPES 5088                
+POS_DOWNLOADS 5369                
+POS_OS 5454                
+POS_BROWSER 5687                
+POS_SCREENSIZE 6406                
+POS_UNKNOWNREFERER 6480                
+POS_UNKNOWNREFERERBROWSER 6872                
+POS_ORIGIN 7050                
+POS_SEREFERRALS 7192                
+POS_PAGEREFS 7349                
+POS_SEARCHWORDS 7702                
+POS_KEYWORDS 7854                
+POS_MISC 2369                
+POS_ERRORS 7913                
+POS_CLUSTER 3865                
+POS_SIDER_404 8078                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20160519031824 403 93971 11930455651561
+FirstTime 20160502001958
+LastTime 20160519025104
+LastUpdate 20160519051948 403 0 403 0 0
+TotalVisits 130                 
+TotalUnique 68                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 70                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 233 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 812 1300 7734034 478 2474 35245557
+1 365 1077 10400273 55 160 1970174
+2 8 46 952026 37 41 1123947
+3 4 4 134628 26 30 641139
+4 0 0 0 28 29 489824
+5 17 20 47315 29 32 1210090
+6 6 6 90354 31 38 778363
+7 10 10 125338 38 46 885760
+8 16 204 1576046 41 61 1748308
+9 296 723 7707188 106 162 1537124
+10 148 427 2612694 49 123 1780008
+11 363 715 8387544 74 205 2599715
+12 217 687 5954045 53 77 1382704
+13 16 105 2047406 32 42 924527
+14 12 16 130703 25 29 1201368
+15 132 268 1387636 40 129 1878141
+16 327 641 2692277 64 126 1655001
+17 701 1213 8859161 104 254 3255135
+18 194 340 1429000 63 109 2314409
+19 174 339 3599284 64 100 1502656
+20 84 319 3269602 52 77 1322467
+21 291 508 3804345 38 85 1703912
+22 169 545 5571726 48 101 1460089
+23 364 805 12230719 75 257 2870444
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 13
+co 3515 7554 45988654
+br 1030 2066 30819596
+us 128 513 10298124
+cl 12 62 1373049
+gb 12 61 1270039
+ar 8 41 523427
+ca 6 6 191205
+ro 5 5 36570
+ru 4 4 120484
+es 2 2 0
+fr 2 2 61098
+de 1 1 30549
+vn 1 1 30549
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 1
+angelitas 503 509 5381408 20160516181748
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 9
+crawl 1932 30203136 20160503002504 0
+googlebot 341 14002343 20160518213801 0
+spider 160 2516606 20160519031824 0
+googlebot\-image 77 3571944 20160511145754 0
+bot[\s_+:,\.\;\/\\-] 17 179520 20160518035921 0
+no_user_agent 7 215405 20160518153514 0
+netcraft 2 31050 20160510194345 0
+robot 2 37863 20160510184818 0
+slurp 1 30549 20160506200026 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 11
+mp3 1 13624 0 0
+css 306 271174 0 0
+png 1358 3001904 0 0
+cgi 92 658260 0 0
+swf 127 7763647 0 0
+php 4201 19566293 0 0
+html 301 8566923 0 0
+js 189 749033 0 0
+jpg 3266 49688719 0 0
+Unknown 5 44790 0 0
+gif 472 418977 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 1
+/cp/chatmodels/shutter.mp3 1 0 13624
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 12
+blackberry 2 2
+linuxandroid 740 115
+winlong 1 1
+winnt 6008 2874
+linux 74 25
+win7 3310 1642
+macosx 63 13
+macosx9 2 2
+linuxdebian 2 2
+win8 1 1
+Unknown 82 45
+win8.1 33 4
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 34
+firefox28.0 1 1
+chrome50.0.2661.89 365 58
+firefox3.6 1 1
+chrome44.0.2403.130 61 12
+android 117 33
+chrome43.0.2357.121 34 5
+chrome50.0.2661.94 6220 3170
+firefox43.0 1 1
+chrome50.0.2661.102 1408 687
+firefox23.0 1 1
+safari7.1.3 2 2
+chrome49.0.2623.112 1280 520
+Unknown 35 31
+chrome30.0.0.0 28 2
+blackberry 2 2
+firefox3.5.1 1 1
+chrome49.0.2623.87 121 63
+chrome34.0.1847.131 1 1
+chrome40.0.2214.109 196 17
+firefox21.0 1 1
+firefox38.0 1 1
+firefox46.0 150 24
+chrome28.0.1500.71 1 1
+chrome49.0.2623.75 2 2
+firefox45.0 76 15
+msie11.0 23 3
+firefox1.0.7 2 2
+firefox25.0 2 2
+mozilla 6 6
+netscape5.0 3 3
+firefox14.0.1 9 9
+chrome46.0.2486.0 125 40
+chrome13.0.782.41 1 1
+safari 41 8
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 5
+NokiaC3-00/5.0_(08.63)_Profile/MIDP-2.1_Configuration/CLDC-1.1_Mozilla/5.0_AppleWebKit/420__(KHTML,_like_Gecko)_Safari/420_ 20160505205901
+Python-urllib/2.7 20160513140402
+Mozilla/5.0_(compatible;_Google-Site-Verification/1.0) 20160505111440
+WWW-Mechanize/1.73 20160517210649
+panscient.com 20160514170758
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+Python-urllib/2.7 20160513140402
+WWW-Mechanize/1.73 20160517210649
+panscient.com 20160514170758
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 359 365
+From1 1 1
+From2 12 12
+From3 3 6
+From4 4351 9934
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+google 12 12
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 3
+http://m.co.mileroticos.com/masajes-eroticos/video-chat-erotico-busca-chicas-18/2229652/ 2 2
+https://translate.googleusercontent.com/translate_p 1 1
+https://translate.googleusercontent.com/translate_c 0 3
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 7
+401 3 0
+403 7 938
+302 193 1088625
+206 31 358795
+406 7 1582
+301 13 4030
+404 1761 19229936
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 61
+/videos 2 -
+/sitemap.xml 1 -
+/admin/content/sitetree/ 1 -
+/test/CHANGELOG.txt 1 -
+/Sample1 2 -
+/robots.txt 43 -
+/manager/ 1 -
+/affiliate 3 -
+/8F0000 331 http://angelitasonline.com/index.php
+/tickets_submit.php 4 -
+/contact 1 -
+/Sample10 1 -
+/add-credits 1 -
+/models/Georgia/thumbnail.jpg 1 -
+/shop/CHANGELOG.txt 1 -
+/models/Jennifer/thumbnail.jpg 1 -
+/forgot.php 1 -
+/view_snaps.php 4 -
+/forgot-password 1 -
+/Sample5 2 -
+/forum/CHANGELOG.txt 1 -
+/graphics/space.gif 379 http://angelitasonline.com/admin/newsletter.php
+/admin/index.php 88 http://angelitasonline.com/registration/user.php
+/blog/CHANGELOG.txt 1 -
+/pglytgyc.html 1 -
+/flash_load.php 115 -
+/images/rounded.php.png 35 http://angelitasonline.com/admin/memberviewdetails.php
+/xmlrpc.php 1 -
+/Sample9 2 -
+/drupal/CHANGELOG.txt 1 -
+/CHANGELOG.txt 1 -
+/Sample12 1 -
+/logout_redirect.swf 18 http://angelitasonline.com/logout.php
+/register.php 4 -
+/maduritacachonda 1 -
+/models/Heidi/thumbnail.jpg 1 -
+/models/Lana/thumbnail.jpg 1 -
+/register 1 -
+/administrator/index.php 1 -
+/Sample7 4 -
+/videoflashchat.php 1 -
+/Sample14 3 -
+/admin 6 -
+/site/CHANGELOG.txt 1 -
+/admin/styles.css 383 http://angelitasonline.com/admin/newsletter.php
+/models/%22.$row[ 1 -
+/slideshow.js 1 http://angelitasonline.com/ladydetails.php
+/forum.php 3 -
+/virtual-performer.mp4 282 http://angelitasonline.com/thumbnail.php
+/administrator/ 2 -
+/images/your-image-here.png 1 http://angelitasonline.com/cp/chatusers/viewsessions.php
+/store/CHANGELOG.txt 1 -
+/performer 3 -
+/googleeaa3c6b1fc129e85.html 3 -
+/Sample8 1 -
+/sample6 1 -
+/wp-content/plugins/showbiz/js/showbiz_admin.js 1 -
+/import58.php 2 -
+/wp-login.php 1 -
+/admin/ 3 -
+/models/%22.$tempUser.%22/%22.$row[ 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 70
+181.143.232.203 1501 2912 14214178 20160518221941
+191.102.119.20 641 1241 7155997 20160503162955
+179.189.23.183 597 1033 13650194 20160503010028
+191.102.120.208 320 385 611308 20160505193503
+179.189.23.78 296 472 7601729 20160505170956
+191.102.119.29 238 641 1070721 20160505122308
+191.102.121.30 162 556 7673677 20160502093903
+191.102.119.212 140 378 2150269 20160516205020
+191.102.120.70 136 137 159394 20160517214645
+187.180.178.153 89 283 5070711 20160516221814
+191.102.119.250 80 149 925992 20160515101348
+191.102.121.25 73 254 406351 20160504100303
+181.143.225.171 61 116 1918229 20160515094355
+69.47.96.241 33 237 4608578 20160518123247
+191.102.119.103 31 107 764203 20160508212921
+72.76.243.86 28 32 907030 20160514170758
+179.189.23.17 27 147 2232786 20160502011722
+200.116.32.69 24 25 431010 20160516091418
+191.102.121.157 23 75 1055255 20160514124437
+191.102.120.175 18 82 174751 20160512072756
+186.170.171.114 17 69 1383584 20160511125428
+64.38.194.13 15 76 1728860 20160503114049
+216.69.191.112 14 57 1153115 20160511132027
+177.124.175.90 14 113 2139183 20160512122022
+186.9.112.181 12 62 1373049 20160518121259
+66.249.84.176 0 1 2520 
+199.30.231.1 1 1 355 20160502002454
+181.134.231.172 3 36 754272 20160518185249
+179.178.65.144 4 4 29256 20160514105128
+104.45.18.178 1 1 35333 20160503020223
+69.58.178.56 11 11 189606 20160518214652
+192.154.110.18 2 5 79120 20160503143258
+52.40.6.76 1 1 7314 20160513195841
+186.86.250.143 3 32 633046 20160503211613
+201.221.122.2 1 1 30121 20160518173320
+167.0.247.19 2 28 513571 20160518090717
+66.249.88.16 1 1 30103 20160515093709
+66.249.90.12 2 2 66826 20160504072137
+5.101.66.180 3 3 90363 20160517205135
+66.102.8.191 1 17 318044 20160510083549
+212.129.20.183 1 1 30549 20160506104834
+66.249.90.8 2 2 68016 20160505111440
+93.114.254.199 5 5 36570 20160513050235
+66.249.84.175 1 2 33326 20160517203124
+190.255.9.144 5 34 525446 20160514124508
+191.102.121.93 6 80 1061575 20160510160858
+66.102.8.201 3 30 541532 20160519012901
+66.102.8.196 3 27 328828 20160519012901
+66.249.90.10 2 2 70666 20160503031614
+109.190.197.100 1 1 30549 20160507205248
+80.169.244.43 12 61 1270039 20160518221352
+191.102.119.177 8 9 36955 20160504141814
+191.247.229.18 3 14 95737 20160514110241
+40.78.146.128 1 1 36880 20160503001624
+95.181.176.242 1 1 30121 20160518005242
+66.249.83.147 1 1 351 20160502002455
+146.148.44.0 1 1 7314 20160513140402
+5.9.39.133 1 1 30549 20160516064604
+104.209.188.207 1 1 36880 20160503001624
+181.62.169.41 11 62 1493212 20160515200826
+115.74.92.96 1 1 30549 20160515060951
+190.227.128.27 8 41 523427 20160505205856
+191.102.120.115 1 34 30549 20160507180138
+191.102.119.108 3 3 21942 20160512194535
+66.249.84.177 0 1 2778 
+158.69.228.18 6 6 191205 20160519025104 20160519025104 /
+104.182.56.5 2 2 14628 20160513101425
+195.78.229.77 2 2 0 20160512051647
+52.38.27.155 1 1 30121 20160517210649
+191.102.119.216 7 108 793046 20160508083220
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 17
+20160502 1249 2957 31864734 16
+20160503 1272 2260 13153819 17
+20160504 118 417 786664 8
+20160505 937 1663 11107768 12
+20160506 6 63 898052 2
+20160507 2 35 61098 2
+20160508 38 215 1557249 2
+20160510 21 113 929420 6
+20160511 112 382 3037808 4
+20160512 30 68 1047480 10
+20160513 15 18 131718 7
+20160514 126 356 5467407 8
+20160515 196 488 6857422 7
+20160516 271 653 6272688 8
+20160517 253 302 1256444 6
+20160518 76 304 5752361 12
+20160519 4 24 561212 3
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 17
+5mn-15mn 12
+30s-2mn 8
+2mn-5mn 9
+15mn-30mn 10
+0s-30s 63
+30mn-1h 10
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 64
+/thumbnail.php 2546 1276955 7 29
+/cp/chatmodels/flash_changestatus.php 333 0 1 3
+/ 238 7352539 89 39
+/admin/index.php 130 3340732 0 0
+/liveshow.php 115 2144799 4 11
+/admin/categories.php 112 636468 0 0
+/index.php 101 3464468 0 1
+/cgi-sys/suspendedpage.cgi 92 658260 20 20
+/thumbnail.swf 79 3674092 0 3
+/admin/models.php 68 1038944 0 0
+/searchModel_ff.php 66 734818 5 2
+/admin/payments.php 58 288434 0 0
+/login_member.php 50 743988 0 1
+/admin/newsubscriptions.php 47 230753 0 1
+/registration/user.php 45 986435 0 2
+/category.php 44 525490 0 1
+/admin/modelviewdetails.php 44 580516 0 1
+/admin/ 44 1080760 2 0
+/admin/members.php 42 285674 0 0
+/admin/package.php 42 265064 0 2
+/thumbnail-small.php 40 20056 0 2
+/login_model.php 39 581251 0 0
+/admin/deleteaccount.php 37 203779 0 0
+/cp/chatmodels/paymentop.php 35 314854 0 0
+/ShowInterface.swf 34 2659328 1 4
+/admin/flash_getshows.php 4 232 0 1
+/flash_updatemaccount.php 5 0 0 0
+/logout.php 17 167403 0 1
+/admin/newsletter.php 8 47696 0 0
+/admin/subscriptionviewdetails.php 4 33014 0 0
+/actm.php 3 26092 0 0
+/admin/dodeleteaccount.php 18 85302 0 0
+/addfavourite.php 1 8537 0 0
+/cp/chatmodels/broadcast.php 25 179940 0 1
+/registration/memberterms.php 1 30 0 0
+/videos.php 1 9482 0 0
+/admin/memberviewdetails.php 26 291526 0 1
+/cpanel 5 44790 0 1
+/registration/model.php 12 339276 0 1
+/registration/userregistered.php 3 24058 0 0
+/admin/license.php 9 45522 0 0
+/admin/acceptsubmission.php 3 14271 0 0
+/ladydetails.php 1 11583 0 0
+/admin/paymentop.php 20 175020 0 0
+/admin/viewshow.swf 3 237462 0 0
+/admin/viewshow.php 6 32544 0 0
+/cp/chatmodels/webcam.swf 1 6034 0 0
+/cp/chatmodels/showslist.php 3 27920 0 0
+/login.php 9 78965 0 1
+/cp/chatusers/buyminutes.php 1 12540 0 0
+/law.php 4 36826 0 0
+/recordedshows.swf 1 277011 0 0
+/cp/chatmodels/updateprofile.php 2 102458 0 0
+/registration/modelterms.php 1 29 0 0
+/cp/chatmodels/ 18 125382 0 0
+/admin/depositmoney.php 2 9870 0 0
+/registration/modelregistered.php 4 31876 0 0
+/lostpassword.php 4 44008 0 0
+/cp/chatmodels/BroadcastInterface.swf 9 909720 0 0
+/passwordsent.php 2 17502 0 0
+/cp/chatusers/viewsessions.php 1 9075 0 0
+/cp/chatusers/ 1 8242 0 0
+/import58.php 1 0 1 0
+/admin/configureccbill.php 6 40218 0 0
+END_SIDER

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Installation Instructions - FLUFFVISION</title>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+.style2 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style3 {
+	color: #990000;
+	font-weight: bold;
+}
+.style4 {color: #0000FF}
+-->
+</style>
+</head>
+
+<body>
+<div align="center">
+  <table width="1000" height="487" border="0" cellpadding="10">
+    <tr>
+      <td width="953" height="39" bgcolor="#990000"><span class="style1">INSTALLING THE SCRIPT </span></td>
+    </tr>
+    <tr>
+      <td height="362" valign="top"><p><span class="style3">Requirements<br />
+      </span>You will need two types of hosting for this script, &quot;Adobe Flash Media Server Hosting&quot; and regular &quot;Linux based hosting&quot;.</p>
+        <p>We recommed Hostgator.com for regular hosting because our scripts were designed on Hostgator hosting.</p>
+        <p>We recommend Serverrrom.net for &quot;Adobe Flash Media Server&quot; hosting because of their rock solid audio/video streams and 5 star customer service. </p>
+        <p>&nbsp;</p>
+        <p>Login to your servers cPanel and create a database for this script and load one of the database sql files that came with the script located in the folder named &quot;Datbase SQL&quot; located in the root of the script.</p>
+        <p>Upload all files onto your webserver into the public_html folder or whatever folder your plan to host the script in.<br />
+        Chmod the folder named &quot;models&quot; to 777 (write permission).<br />
+        <br />
+        edit &quot;dbase.php&quot; located in the root folder of the script and change the database information to your database information.<br />
+        edit the file settings.php to your settings. Please see the Flash Media Server &quot;READ-ME.html&quot; file located in the &quot;Flash Media Server Files&quot; folder for information on setting up your RTMP address.</p>
+        <p>&nbsp;</p>
+        <p><span class="style3">Setting up the database </span><br />
+      import the file Database_SQL.sql located in the &quot;Database SQL&quot; folder using the PhpMyAdmin software on your hosting control panel.</p>
+      <p>The SQL file named &quot;<span class="style4">CJ3-Database-5-models-final.sql</span>&quot; will install 5 premade performer accounts into your database.<br />
+        The SQL file named &quot;<span class="style4">CJ3-Database-50-models-final.sql</span>&quot; will install 50 premade performer accounts into your database. </p>
+      <p>by default the script displays 50 performer thumbnails per page, provided you have 50 accounts created.</p>
+      <p>&nbsp;</p></td>
+    </tr>
+    <tr>
+      <td bgcolor="#990000">&nbsp;
+      &nbsp;<span class="style1">SETTING UP THE FLASH MEDIA SERVER</span></td>
+    </tr>
+    <tr>
+      <td><p>This is so easy. You will need an FTP client such as FileZilla. You can get it free here.<br />
+            <br />
+          <a href="https://filezilla-project.org/">https://filezilla-project.org/</a> </p>
+        <p>FTP into your Flash Media Server and open the folder named &quot;applications&quot;. Inside that folder create a folder and name it whatever you want. (example:  &quot;adult&quot; or &quot;webcams&quot;).</p>
+        <p> Upload the &quot;main.asc&quot; file into the new folder you created. Now your Flash server is setup properly.
+          NEXT&gt;&gt;&gt;&gt;
+          Next you need to find your Flash hosting RTMP address. If you are using Serverroom.net for you Flash hosting then your RTMP address should look like this. <br />
+            <br />
+          RTMP://your-account.srfms.com/ </p>
+        <p>Using the text editor of your choice open the file named &quot;settings.php&quot; which is located in the root of the script. You will see a sample RTMP address in the file code, simply replace the sample RTMP address with your real RTMP address. </p>
+        <p>WAIT!  That's NOT all.... </p>
+        <p>At the very end of your RTMP address you need to add a forward slash followed by the name of the folder you created in the &quot;applications&quot; folder on the Flash Media Server. So lets say you used one of my examples and named your folder &quot;webcams&quot;, your RTMP <br />
+          address in the &quot;settings.php&quot; file should look like this.</p>
+        <p> rtmp://your-account.srfms.com/webcams/ </p>
+        <p>DO NOT FORGET THE LAST FORWARD SLASH AT THE END OF THIS URL.</p>
+        <p> 
+          rtmp://your-account.srfms.com/webcams<span class="style2">/</span> &lt;&lt;&lt;----- This forward slash </p>
+        <p>SAVE the &quot;settings.php&quot; file and upload it to your regular <br />
+          hosting server in the root folder of your script.      </p>
+      <p>Flash Media Server is now setup. </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    </tr>
+  </table>
+</div>
+<p align="center">
+</body>
+</html>
